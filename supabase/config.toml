@@ -1,0 +1,34 @@
+project_id = "qfklkkzxemsbeniyugiz"
+
+[functions.generate-manifest]
+verify_jwt = false
+
+[functions.tenant-config]
+verify_jwt = false
+
+[functions.weather]
+verify_jwt = false
+
+[functions.ai-agriculture-chat]
+verify_jwt = true
+
+[functions.google-maps-config]
+verify_jwt = false
+
+[functions.get-white-label-config]
+verify_jwt = false
+
+[functions.lands-api]
+verify_jwt = false
+
+[functions.ai-smart-schedule]
+verify_jwt = true
+
+[functions.ai-schedule-monitor]
+verify_jwt = true
+
+[functions.ai-marketing-insights]
+verify_jwt = true
+
+[functions.ai-schedule-climate-monitor]
+verify_jwt = true

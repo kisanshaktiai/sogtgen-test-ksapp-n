@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for horizontal scrolling weather cards */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for mobile-first design */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+/* 2030 AI-Ready Design System - Futuristic & Intelligent */
+
+@layer base {
+  :root {
+    /* Core Colors - Neural Network Inspired */
+    --background: 220 25% 98%;
+    --foreground: 220 15% 12%;
+    
+    /* Card & Surfaces - Advanced Layering */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 12%;
+    
+    /* Primary - AI Electric Blue */
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 48%;
+    --primary-glow: 210 100% 70%;
+    --primary-dim: 210 100% 35%;
+    
+    /* Secondary - Quantum Purple */
+    --secondary: 270 75% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Cyber Cyan */
+    --accent: 180 100% 45%;
+    --accent-foreground: 220 15% 12%;
+    
+    /* Status Colors */
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 95% 58%;
+    --warning-foreground: 38 10% 15%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --info: 210 100% 56%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Muted - Subtle Intelligence */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Borders & Inputs - Neural Lines */
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 210 100% 56%;
+    
+    /* Radius - Fluid Forms */
+    --radius: 1rem;
+    
+    /* Semantic Colors for Agriculture */
+    --crop-stage-germination: 180 100% 45%;
+    --crop-stage-vegetative: 142 76% 45%;
+    --crop-stage-flowering: 270 75% 60%;
+    --crop-stage-fruiting: 38 95% 58%;
+    --crop-stage-harvesting: 45 95% 55%;
+    
+    /* Land Health Score Colors */
+    --land-health-excellent: 142 76% 45%;
+    --land-health-good: 45 95% 55%;
+    --land-health-poor: 0 85% 60%;
+    
+    /* Weather Semantic Colors */
+    --weather-sunny: 45 95% 55%;
+    --weather-cloudy: 220 15% 72%;
+    --weather-rainy: 210 100% 56%;
+    --weather-stormy: 240 20% 35%;
+    --weather-night: 230 40% 15%;
+    
+    /* UV Index Colors */
+    --uv-low: 142 76% 45%;
+    --uv-moderate: 45 95% 55%;
+    --uv-high: 38 95% 58%;
+    --uv-very-high: 0 85% 60%;
+    --uv-extreme: 280 85% 55%;
+    
+    /* AI-Inspired Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(180 100% 45%));
+    --gradient-neural: linear-gradient(135deg, hsl(210 100% 56%), hsl(270 75% 60%));
+    --gradient-earth: linear-gradient(180deg, hsl(142 76% 45%), hsl(45 95% 55%));
+    --gradient-sunrise: linear-gradient(135deg, hsl(38 95% 58%), hsl(45 95% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%), hsl(180 100% 45%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 95% 58%), hsl(45 95% 55%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 85% 60%), hsl(38 95% 58%));
+    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 45%), hsl(210 100% 56%), hsl(270 75% 60%));
+    
+    /* Action Button Gradients - 2030 UI */
+    --gradient-voice: linear-gradient(135deg, hsl(270 75% 60%), hsl(280 85% 65%));
+    --gradient-scan: linear-gradient(135deg, hsl(330 85% 60%), hsl(340 90% 65%));
+    --gradient-actions: linear-gradient(135deg, hsl(180 100% 45%), hsl(200 100% 55%));
+    
+    /* Agricultural Theme Gradients for Chat */
+    --gradient-agri-green: linear-gradient(135deg, hsl(142 76% 45%), hsl(100 70% 50%));
+    --gradient-agri-yellow: linear-gradient(135deg, hsl(45 95% 55%), hsl(38 95% 58%));
+    --gradient-agri-brown: linear-gradient(135deg, hsl(30 45% 45%), hsl(20 55% 35%));
+    --gradient-soil: linear-gradient(180deg, hsl(30 45% 45%), hsl(25 50% 40%));
+    --gradient-crop: linear-gradient(135deg, hsl(100 70% 50%), hsl(142 76% 45%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 100% 56%), hsl(200 85% 65%));
+    
+    /* Advanced Shadows - Multi-layer Depth */
+    --shadow-sm: 0 1px 3px 0 hsl(220 15% 12% / 0.08), 0 1px 2px 0 hsl(220 15% 12% / 0.06);
+    --shadow-md: 0 4px 12px 0 hsl(220 15% 12% / 0.12), 0 2px 6px 0 hsl(220 15% 12% / 0.08);
+    --shadow-lg: 0 20px 40px 0 hsl(220 15% 12% / 0.15), 0 8px 16px 0 hsl(220 15% 12% / 0.1);
+    --shadow-glow: 0 0 40px hsl(210 100% 56% / 0.3), 0 0 80px hsl(210 100% 56% / 0.15);
+    --shadow-neural: 0 8px 32px hsl(210 100% 56% / 0.2), 0 0 60px hsl(270 75% 60% / 0.15);
+    
+    /* Animations - Smooth Intelligence */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Bottom Navigation */
+    --nav-height: 4.5rem;
+    --nav-background: 0 0% 100%;
+    --nav-border: 220 20% 88%;
+    --nav-active: 210 100% 56%;
+    --nav-inactive: 220 10% 55%;
+    
+    /* Chart Colors - Data Visualization */
+    --chart-1: 210 100% 56%;
+    --chart-2: 180 100% 45%;
+    --chart-3: 270 75% 60%;
+    --chart-4: 142 76% 45%;
+    --chart-5: 38 95% 58%;
+    
+    /* Map Colors */
+    --polygon-fill: 142 76% 45%;
+    --polygon-stroke: 142 76% 35%;
+    --marker-color: 210 100% 56%;
+    --tracking-fill: 180 100% 45%;
+    --tracking-stroke: 180 100% 35%;
+    
+    /* Overlay Colors */
+    --overlay-light: 0 0% 100%;
+    --overlay-dark: 220 15% 12%;
+    
+    /* Glass Morphism */
+    --glass-background: 0 0% 100%;
+    --glass-border: 220 20% 88%;
+    --glass-blur: 24px;
+    
+    /* 2030 Chat Bubble Gradients - Light Mode */
+    --chat-bubble-user-gradient: linear-gradient(135deg, 
+      hsl(210 100% 56%), 
+      hsl(210 100% 48%), 
+      hsl(200 100% 60%)
+    );
+    --chat-bubble-ai-glass: hsl(var(--card) / 0.6);
+    
+    /* Advanced Shadows for Chat Bubbles */
+    --shadow-chat-user: 
+      0 8px 32px rgba(33, 150, 243, 0.25),
+      0 16px 64px rgba(33, 150, 243, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    
+    --shadow-chat-ai: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    
+    /* Legacy variables for compatibility */
+    --chat-bubble-user-bg: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 48%));
+    --chat-bubble-ai-bg: hsl(0 0% 99%);
+    --chat-bubble-ai-border: hsl(220 15% 92%);
+    
+    /* Chat Section Colors - Soft Pastels */
+    --chat-section-green-bg: hsl(142 60% 95%);
+    --chat-section-green-border: hsl(142 60% 70%);
+    --chat-section-green-icon: hsl(142 60% 40%);
+    --chat-section-green-badge: hsl(142 60% 45%);
+    
+    --chat-section-yellow-bg: hsl(45 85% 95%);
+    --chat-section-yellow-border: hsl(45 85% 70%);
+    --chat-section-yellow-icon: hsl(45 85% 45%);
+    --chat-section-yellow-badge: hsl(45 85% 50%);
+    
+    --chat-section-purple-bg: hsl(270 65% 95%);
+    --chat-section-purple-border: hsl(270 65% 70%);
+    --chat-section-purple-icon: hsl(270 65% 50%);
+    --chat-section-purple-badge: hsl(270 65% 55%);
+    
+    --chat-section-blue-bg: hsl(210 80% 95%);
+    --chat-section-blue-border: hsl(210 80% 70%);
+    --chat-section-blue-icon: hsl(210 80% 45%);
+    --chat-section-blue-badge: hsl(210 80% 50%);
+    
+    --chat-section-red-bg: hsl(0 70% 95%);
+    --chat-section-red-border: hsl(0 70% 70%);
+    --chat-section-red-icon: hsl(0 70% 50%);
+    --chat-section-red-badge: hsl(0 70% 55%);
+    
+    --chat-section-default-bg: hsl(220 15% 96%);
+    --chat-section-default-border: hsl(220 15% 75%);
+    --chat-section-default-icon: hsl(220 15% 45%);
+    --chat-section-default-badge: hsl(220 15% 50%);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 210 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 68%;
+    --primary-glow: 210 100% 75%;
+    --primary-dim: 210 100% 40%;
+    
+    --secondary: 270 75% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 180 100% 50%;
+    --accent-foreground: 220 15% 12%;
+    
+    --success: 142 76% 50%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 95% 62%;
+    --warning-foreground: 38 10% 15%;
+    
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --info: 210 100% 60%;
+    --info-foreground: 0 0% 100%;
+    
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 65%;
+    
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 210 100% 60%;
+    
+    /* Dark mode AI gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(180 100% 50%));
+    --gradient-neural: linear-gradient(135deg, hsl(210 100% 60%), hsl(270 75% 65%));
+    --gradient-earth: linear-gradient(180deg, hsl(142 76% 50%), hsl(45 95% 60%));
+    --gradient-sunrise: linear-gradient(135deg, hsl(38 95% 62%), hsl(45 95% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 50%), hsl(180 100% 50%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 95% 62%), hsl(45 95% 60%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 85% 65%), hsl(38 95% 62%));
+    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 50%), hsl(210 100% 60%), hsl(270 75% 65%));
+    
+    /* Action Button Gradients - 2030 UI Dark */
+    --gradient-voice: linear-gradient(135deg, hsl(270 75% 65%), hsl(280 85% 70%));
+    --gradient-scan: linear-gradient(135deg, hsl(330 85% 65%), hsl(340 90% 70%));
+    --gradient-actions: linear-gradient(135deg, hsl(180 100% 50%), hsl(200 100% 60%));
+    
+    /* Agricultural Theme Gradients for Chat - Dark Mode */
+    --gradient-agri-green: linear-gradient(135deg, hsl(142 76% 50%), hsl(100 70% 55%));
+    --gradient-agri-yellow: linear-gradient(135deg, hsl(45 95% 60%), hsl(38 95% 62%));
+    --gradient-agri-brown: linear-gradient(135deg, hsl(30 45% 50%), hsl(20 55% 40%));
+    --gradient-soil: linear-gradient(180deg, hsl(30 45% 50%), hsl(25 50% 45%));
+    --gradient-crop: linear-gradient(135deg, hsl(100 70% 55%), hsl(142 76% 50%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 100% 60%), hsl(200 85% 70%));
+    
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px 0 hsl(0 0% 0% / 0.4), 0 2px 6px 0 hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 20px 40px 0 hsl(0 0% 0% / 0.5), 0 8px 16px 0 hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(210 100% 60% / 0.4), 0 0 80px hsl(210 100% 60% / 0.2);
+    --shadow-neural: 0 8px 32px hsl(210 100% 60% / 0.3), 0 0 60px hsl(270 75% 65% / 0.2);
+    
+    --nav-background: 220 20% 10%;
+    --nav-border: 220 20% 22%;
+    --nav-active: 210 100% 60%;
+    --nav-inactive: 220 10% 55%;
+    
+    /* Overlay Colors Dark */
+    --overlay-light: 0 0% 100%;
+    --overlay-dark: 220 25% 8%;
+    
+    /* Glass Morphism Dark */
+    --glass-background: 220 20% 12%;
+    --glass-border: 220 20% 22%;
+    --glass-blur: 24px;
+    
+    /* 2030 Chat Bubble Gradients - Dark Mode */
+    --chat-bubble-user-gradient: linear-gradient(135deg, 
+      hsl(210 100% 60%), 
+      hsl(210 100% 52%), 
+      hsl(200 100% 65%)
+    );
+    --chat-bubble-ai-glass: hsl(var(--card) / 0.6);
+    
+    /* Advanced Shadows for Chat Bubbles - Dark Mode */
+    --shadow-chat-user: 
+      0 8px 32px rgba(33, 150, 243, 0.3),
+      0 16px 64px rgba(33, 150, 243, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    
+    --shadow-chat-ai: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    
+    /* Legacy variables for compatibility */
+    --chat-bubble-user-bg: linear-gradient(135deg, hsl(210 100% 60%), hsl(210 100% 52%));
+    --chat-bubble-ai-bg: hsl(220 20% 15%);
+    --chat-bubble-ai-border: hsl(220 20% 25%);
+    
+    /* Chat Section Colors - Dark Mode */
+    --chat-section-green-bg: hsl(142 60% 15%);
+    --chat-section-green-border: hsl(142 60% 35%);
+    --chat-section-green-icon: hsl(142 60% 65%);
+    --chat-section-green-badge: hsl(142 60% 55%);
+    
+    --chat-section-yellow-bg: hsl(45 85% 15%);
+    --chat-section-yellow-border: hsl(45 85% 35%);
+    --chat-section-yellow-icon: hsl(45 85% 65%);
+    --chat-section-yellow-badge: hsl(45 85% 60%);
+    
+    --chat-section-purple-bg: hsl(270 65% 15%);
+    --chat-section-purple-border: hsl(270 65% 35%);
+    --chat-section-purple-icon: hsl(270 65% 70%);
+    --chat-section-purple-badge: hsl(270 65% 65%);
+    
+    --chat-section-blue-bg: hsl(210 80% 15%);
+    --chat-section-blue-border: hsl(210 80% 35%);
+    --chat-section-blue-icon: hsl(210 80% 65%);
+    --chat-section-blue-badge: hsl(210 80% 60%);
+    
+    --chat-section-red-bg: hsl(0 70% 15%);
+    --chat-section-red-border: hsl(0 70% 35%);
+    --chat-section-red-icon: hsl(0 70% 70%);
+    --chat-section-red-badge: hsl(0 70% 65%);
+    
+    --chat-section-default-bg: hsl(220 15% 16%);
+    --chat-section-default-border: hsl(220 15% 35%);
+    --chat-section-default-icon: hsl(220 15% 65%);
+    --chat-section-default-badge: hsl(220 15% 60%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* 2030 Glassmorphism - Neural Transparency */
+  .glassmorphism {
+    @apply bg-background/70 backdrop-blur-2xl border border-border/60;
+    box-shadow: var(--shadow-md), inset 0 1px 2px 0 hsl(var(--foreground) / 0.05);
+  }
+  
+  .glassmorphism-strong {
+    @apply bg-background/85 backdrop-blur-3xl border border-border/70;
+    box-shadow: var(--shadow-lg), inset 0 2px 4px 0 hsl(var(--foreground) / 0.08);
+  }
+  
+  .glassmorphism-subtle {
+    @apply bg-background/50 backdrop-blur-xl border border-border/40;
+    box-shadow: var(--shadow-sm), inset 0 1px 1px 0 hsl(var(--foreground) / 0.03);
+  }
+  
+  /* Neural Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-neural {
+    box-shadow: var(--shadow-neural);
+  }
+  
+  /* Enhanced shadows for depth perception */
+  .shadow-3xl {
+    box-shadow: 0 35px 70px -20px hsl(var(--foreground) / 0.25), 
+                0 20px 40px -15px hsl(var(--foreground) / 0.15);
+  }
+  
+  .shadow-ai {
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.2), 
+                0 0 60px hsl(var(--primary) / 0.1),
+                0 2px 8px hsl(var(--foreground) / 0.1);
+  }
+
+  /* Custom Animations for FAB */
+  @keyframes scale-out {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+  }
+}
+
+/* Hide scrollbar for mobile-first design */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+  .animate-scale-out {
+    animation: scale-out 0.6s ease-out forwards;
+  }
+
+  /* Radial gradient for FAB */
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+
+  /* Scrollbar hide utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Premium glass cards for crop selection */
+  .glass-card {
+    @apply bg-white/70 dark:bg-black/20 backdrop-blur-xl border-2 border-white/30 dark:border-white/20;
+    @apply rounded-2xl shadow-lg;
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.15),
+      inset 0 2px 4px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-card-premium {
+    @apply bg-white/60 dark:bg-black/30 backdrop-blur-2xl border-2 border-white/40 dark:border-white/30;
+    @apply rounded-2xl;
+    box-shadow: 
+      0 20px 40px 0 rgba(31, 38, 135, 0.2),
+      0 4px 12px 0 rgba(0, 0, 0, 0.1),
+      inset 0 4px 8px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -4px 8px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-card:hover,
+  .glass-card-glow {
+    @apply border-white/50 dark:border-white/40;
+    box-shadow: 
+      0 12px 48px 0 rgba(31, 38, 135, 0.25),
+      0 0 24px 0 hsl(var(--primary) / 0.15),
+      inset 0 2px 4px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-card-selected {
+    @apply border-2;
+    border-image: linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--accent) / 0.8)) 1;
+    box-shadow: 
+      0 12px 48px 0 hsl(var(--primary) / 0.3),
+      0 0 32px 0 hsl(var(--primary) / 0.2),
+      inset 0 2px 4px 0 rgba(255, 255, 255, 0.5);
+  }
+  
+  .glass-checkmark {
+    @apply rounded-full p-1.5;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    box-shadow: 
+      0 4px 12px 0 hsl(var(--primary) / 0.4),
+      0 0 20px 0 hsl(var(--primary) / 0.3);
+  }
+  
+  .glass-badge {
+    @apply bg-white/60 dark:bg-black/40 backdrop-blur-md border border-white/30 dark:border-white/20;
+    box-shadow: 
+      0 2px 8px 0 rgba(0, 0, 0, 0.1),
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Animation utilities */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Bottom Navigation Glassmorphism */
+  .glassmorphism-nav {
+    @apply bg-background/85 backdrop-blur-2xl;
+    background: linear-gradient(
+      to top,
+      hsl(var(--background) / 0.95),
+      hsl(var(--background) / 0.85)
+    );
+    box-shadow: 
+      0 -4px 24px 0 rgba(0, 0, 0, 0.1),
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Central Action Button Animations */
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px hsl(var(--primary) / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+    }
+  }
+  
+  .animate-pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Micro-interactions */
+  @keyframes slide-up {
+    from {
+      transform: translateY(4px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  /* Mobile-first Scrollbar Styles */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Only show styled scrollbars on desktop devices */
+  @media (hover: hover) and (pointer: fine) {
+    .scrollbar-thin {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--muted-foreground) / 0.3);
+      border-radius: 3px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+      background-color: hsl(var(--muted-foreground) / 0.5);
+    }
+  }
+  
+  /* Hide scrollbars on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    .scrollbar-thin {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  /* Mobile Viewport Utilities */
+  .h-mobile-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  .min-h-mobile-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .max-h-mobile-screen {
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+  
+  /* Safe Area Padding Utilities */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  .pb-nav-safe {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0));
+  }
+  
+  /* Mobile Scroll Containers */
+  .mobile-scroll-container {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  
+  .mobile-scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Safe area padding for mobile devices */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  /* Fade in animation */
+  /* Action Menu Popup Animation */
+  @keyframes slide-up-spring {
+    0% {
+      transform: translateY(100%) scale(0.95);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(-5%) scale(1.02);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-up-spring {
+    animation: slide-up-spring 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Glassmorphism for Action Menu */
+  .glassmorphism-nav-menu {
+    @apply bg-background/90 dark:bg-background/80 backdrop-blur-xl;
+    box-shadow: 
+      0 -8px 32px 0 rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
